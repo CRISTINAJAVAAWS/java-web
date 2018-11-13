@@ -17,7 +17,7 @@ public class Usuarioservlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		Usuario pepe = new Usuario(1, "Jose", "j@j.com");
 		
-		request.setAttribute("elUsuario",pepe);
+		request.setAttribute("elUsuario, pepe);
 		request.getRequestDispatcher("/usuario.jsp").forward(request, response);
 		
 	}
