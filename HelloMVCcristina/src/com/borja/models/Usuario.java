@@ -1,16 +1,18 @@
-package com.ricardo.modelos;
-//modelo de MVC:
-public class Usuario {
+package com.borja.models;
 
+public class Usuario {
 	private int id;
 	private String name;
 	private String email;
+	private String pass;
 	private Habitacion habitacion;
 	
-	public Usuario(int id, String name, String email, hab habitacion) {
+	
+	public Usuario(int id, String name, String email, String pass, Habitacion habitacion) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
+		this.pass = pass;
 		this.habitacion = habitacion;
 	}
 
@@ -37,15 +39,26 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public Habitacion getHabitacion() {
 		return habitacion;
 	}
-	
-	public void setHid(Habitacion habitacion) {
+
+	public void setHabitacion(Habitacion habitacion) {
 		this.habitacion = habitacion;
 	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
 	
 	
 	
+	
+
 }
