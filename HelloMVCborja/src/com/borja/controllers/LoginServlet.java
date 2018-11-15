@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		String emailrecib = request.getParameter("email");
 		String passrecib = request.getParameter("password");
 		
-		BBDD bd = new BBDD();		
+		BBDD bd = BBDD.getInstance();		
 		//decidir si existe usuario con ese email y password...entrar en listausuarios
 		//Si no...volver a mostrar formulario
 		

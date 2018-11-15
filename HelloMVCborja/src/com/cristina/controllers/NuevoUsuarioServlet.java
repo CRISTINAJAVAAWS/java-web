@@ -24,6 +24,11 @@ public class NuevoUsuarioServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		ArrayList<Habitacion> habitaciones = BBDD.getInstance().habitaciones;
+		request.setAttribute("lasHabitaciones", habitaciones);
+		request.getRequestDispatcher("/nuevousuario.jsp").forward(request, response);
+		
+		
 		String nombrerecib = request.getParameter("nombre");
 		String emailrecib = request.getParameter("email");
 		String passrecib = request.getParameter("password");
@@ -33,10 +38,12 @@ public class NuevoUsuarioServlet extends HttpServlet {
 		
 		System.out.println("email: "+emailrecib);
 		
-		if(nuevoUser.esValido(passconfrecib)) {
-			//CONTINUAR E INTRODUCXTI USUARIO EN bbdd
-			BBDD db = new BBDD();
+		if(nuevoUser.esValido(passconfrecib) ) {
+			//CONTINUAR E INTRODUCir USUARIO EN bbdd
+			BBDD db = BBDD.getInstance();
 			db.insertaUsuario(nuevoUser);
+			
+			
 			//redirijo a lista de usuarios.
 			response.sendRedirect("listausuarios");
 			

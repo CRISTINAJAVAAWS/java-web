@@ -23,7 +23,8 @@ public class ListaUsuariosServlet extends HttpServlet {
 		//Si existe el dato usuario en session -> lo dejo pasar
 		// Si no lo redirijo a login
 		if(session.getAttribute("usuario")!=null) {
-			BBDD bbdd = new BBDD();
+			BBDD bbdd = BBDD.getInstance();
+			//Decicidir si 
 			request.setAttribute("losUsuarios", bbdd.usuarios);
 			request.getRequestDispatcher("/ListaUsuarios.jsp").forward(request, response);	
 		}else {

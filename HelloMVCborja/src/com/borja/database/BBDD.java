@@ -6,11 +6,21 @@ import com.borja.models.Habitacion;
 import com.borja.models.Usuario;
 
 public class BBDD {
+	public static BBDD instance=null;
+			//singleton empieza
 	public ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
-	public ArrayList<Habitacion> Habitaciones = new ArrayList<Habitacion>();
+	public ArrayList<Habitacion> habitaciones = new ArrayList<Habitacion>();
 
-	public BBDD() {
+	public static final BBDD getInstance() {
+		if(instance==null) instance=new BBDD();
+		
+	
+		
+		return instance;
+	}
+	private BBDD() {
+		//finaliza singleton
 		this.fillUsuarios();
 		this.fillHabitaciones();
 		this.relacionaruserhab();
@@ -62,7 +72,7 @@ public class BBDD {
 
 	public Habitacion dameHabitacionPorHid(int hid) {
 		Habitacion habitacionADevolver = null;
-		// iteramos por cada usuario y cmparamos su id con el que nos indica
+		// iteramos por cada usuario y comparamos su id con el que nos indica.
 
 		for (Habitacion unaHabitacion : Habitaciones) {
 
