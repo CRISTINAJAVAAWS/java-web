@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,16 +28,17 @@
 			<input type="password" placeholder="Password Confirmation"
 				name="passwordconfirmation" id="passwordconfirmation" value=""
 				required />
-
-			<div>
-				<label for="habitacion">Habitación</label> <select name="habitacion"
-					id="habitacion"></select>
-					<c:forEach var="unaHab" items="${lasHabitaciones}">
-				<option value="${unaHab.hid}">${unaHab.calle}</option>
-				</c:forEach>
-				</select>
-			</div>
 		</div>
+
+
+		<label for="habitacion">Habitación</label>
+		 <select name="habitacion" id="habitacion">
+			<c:forEach var="unaHab" items="${lashabitaciones}">
+				<option value="${unaHab.hid}">${unaHab.calle}</option>
+			</c:forEach>
+		</select> 
+		<a href="./nuevahabitacion">Nueva Habitacion</a>
+
 		<div>
 			<button>Enviar</button>
 		</div>

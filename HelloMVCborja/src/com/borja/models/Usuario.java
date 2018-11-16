@@ -69,8 +69,10 @@ public class Usuario {
 
 		if (!this.pass.equals(confpass))
 			esValid = false;
-
+		
+		if(this.habitacion==null) esValid=false;
 		return esValid;
+		
 	}
 
 }

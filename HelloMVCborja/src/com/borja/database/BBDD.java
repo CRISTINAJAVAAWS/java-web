@@ -6,11 +6,13 @@ import com.borja.models.Habitacion;
 import com.borja.models.Usuario;
 
 public class BBDD {
-	public static BBDD instance=null;
+	
+	private static BBDD instance=null;
 			//singleton empieza
+	
 	public ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 
-	public ArrayList<Habitacion> habitaciones = new ArrayList<Habitacion>();
+	public ArrayList<Habitacion> Habitaciones = new ArrayList<Habitacion>();
 
 	public static final BBDD getInstance() {
 		if(instance==null) instance=new BBDD();
@@ -110,6 +112,20 @@ public class BBDD {
 	this.usuarios.add(newUser);
 	
 	return nuevoId;
+	
+	
+		
+	}
+	public int insertaHabitacion(Habitacion nuevahabitacion) {
+		int nuevoHid=0;
+		
+		nuevoHid=this.Habitaciones.size()+1;
+		
+		nuevahabitacion.setHid(nuevoHid);
+		
+		this.Habitaciones.add(nuevahabitacion);
+		
+		return nuevoHid;
 		
 	}
 

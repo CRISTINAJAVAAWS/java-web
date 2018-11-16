@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
 		
 		if( existeUser ) {
 			//llevarlo a lista usuarios
+			//si queremos que user no vea ruta
 			//request.getRequestDispatcher("/listausuarios").forward(request, response);
 			session.setAttribute("usuario", emailrecib);
 			response.sendRedirect("listausuarios");

@@ -26,7 +26,7 @@ public class UsuarioServlet extends HttpServlet {
 			System.out.println("id recibido:" + idusuario);
 
 			int idU = Integer.parseInt(idusuario);
-			BBDD bbdd = new BBDD();
+			BBDD bbdd = BBDD.getInstance();
 
 			request.setAttribute("elusuario", bbdd.getUsuarioById(idU));
 

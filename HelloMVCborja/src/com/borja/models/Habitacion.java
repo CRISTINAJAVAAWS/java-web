@@ -4,7 +4,7 @@ public class Habitacion {
 	private int hid;
 	private String calle;
 	private double metros;
-	
+
 	public Habitacion(int hid, String calle, double metros) {
 		this.hid = hid;
 		this.calle = calle;
@@ -33,7 +33,19 @@ public class Habitacion {
 
 	public void setMetros(double metros) {
 		this.metros = metros;
+
 	}
-	
+
+	public boolean esValid() {
+		boolean esValid = true;
+		
+		if (!this.calle.matches("([a-zA-Z]*)[0-9](.*)?"))
+			esValid = false;
+		
+		if (this.metros <= 0)
+			esValid = false;
+		
+		return esValid;
+	}
 
 }
