@@ -33,6 +33,8 @@ public class NuevoUsuarioServlet extends HttpServlet {
 		String emailrecib = request.getParameter("email");
 		String passrecib = request.getParameter("password");
 		String passconfrecib = request.getParameter("passwordconfirmation");
+		String habitacionrecib = request.getParameter("habitacion");
+		System.out.println("habitacion:" + habitacionrecib);
 		
 		Usuario nuevoUser = new Usuario(0, nombrerecib, emailrecib, passrecib, null);
 		
