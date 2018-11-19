@@ -19,6 +19,7 @@
 		<div>
 			<input type="text" placeholder="Email" name="email" id="email"
 				value="${newusuario.email}" required />
+				<div class="error esconder" id="repass</div>
 		</div>
 		<div>
 			<input type="password" placeholder="Password" name="password"
