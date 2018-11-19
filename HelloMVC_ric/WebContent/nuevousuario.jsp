@@ -35,17 +35,16 @@
 			<div class="error esconder" id="reppasserr">Las contraseñas deben coincidir</div>
 		</div>
 		<div>
-			<label for="habitacion">Habitación:</label>
+			<label for="amigo">Amigo:</label>
 			<select name="habitacion" id="habitacion">
-				<c:forEach var="unaHab" items="${lasHabitaciones}">
-					<option value="${unaHab.hid}">${unaHab.calle}</option>
+				<c:forEach var="unaHab" items="${unosamigos}">
+					<option value="${unaHab.hid}">${unamigo.calle}</option>
 				</c:forEach>
 			</select>
-			<div class="error esconder" id="habitacionerr">Debes introducir una habitación válida</div>
 
 		</div>
 		
-		<a href="./nuevahabitacion">Nueva habitacion</a>
+		<a href="./nuevoamigo">Nuevo Amigo</a>
 		
 		<div>
 			<button id="enviarBtn">Enviar</button>
